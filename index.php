@@ -19,10 +19,10 @@ $query = "select * from query.multi where queries='".$query."'";
 $url = $root . '&q=' . urlencode($query);
 
 /* Do the curl call (access the data just like a browser would) */
-$ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, $url); 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-$output = curl_exec($ch); 
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$output = curl_exec($ch);
 curl_close($ch);
 $data = json_decode($output);
 $results = $data->query->results->results;
@@ -41,7 +41,7 @@ foreach($results[1]->photo as $r){
   $flickr .= '<li>'.
              '<a href="http://www.flickr.com/photos/codepo8/'.$r->id.'/">'.
              '<img src="http://farm' .$r->farm . '.static.flickr.com/'.
-             $r->server . '/' . $r->id . '_' . $r->secret . 
+             $r->server . '/' . $r->id . '_' . $r->secret .
              '_s.jpg" alt="'.$r->title.'"></a></li>';
 }
 $flickr .= '</ul>';
@@ -72,7 +72,7 @@ function undoYouTubeMarkupCrimes($str){
 <html>
 <head>
    <title>Christian Heilmann on the web</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
    <style type="text/css" media="screen">
 html,body{background:#369;color:#fff;}
